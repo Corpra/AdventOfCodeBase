@@ -8,7 +8,7 @@ namespace AdventOfCode.Solutions.Year2021
 	class Day01 : ASolution
 	{
 
-		public Day01() : base(01, 2021, "")
+		public Day01() : base(01, 2021, "Sonar Sweep")
 		{
 
 		}
