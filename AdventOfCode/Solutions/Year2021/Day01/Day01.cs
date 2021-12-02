@@ -27,8 +27,6 @@ namespace AdventOfCode.Solutions.Year2021
 				prevLineVal = lineVal;
 			}
 
-			Console.WriteLine("The answer is {0}.", result);
-
 			return result.ToString();
 		}
 
@@ -86,8 +84,6 @@ namespace AdventOfCode.Solutions.Year2021
 
 				index++;
 			}
-
-			Console.WriteLine("The answer is {0}.", result);
 
 			return result.ToString();
 		}
