@@ -18,7 +18,7 @@ namespace AdventOfCode.Solutions.Year2021
 			var result = 0;
 			var prevLineVal = 100000;
 
-			foreach (var line in System.IO.File.ReadLines("input.txt"))
+			foreach (var line in System.IO.File.ReadLines("inputs/Day01.txt"))
 			{
 				var lineVal = Convert.ToInt32(line);
 				if (prevLineVal < lineVal)
@@ -45,7 +45,7 @@ namespace AdventOfCode.Solutions.Year2021
 			var prevSetValB = 0;
 			var prevSetValC = 0;
 
-			foreach (var line in System.IO.File.ReadLines("input.txt"))
+			foreach (var line in System.IO.File.ReadLines("inputs/Day01.txt"))
 			{
 				var lineVal = Convert.ToInt32(line);
 
