@@ -38,14 +38,39 @@ namespace AdventOfCode.Solutions.Year2021
 
 			var result = horizontalPos * depth;
 
-			Console.WriteLine("The answer is {0}.", result);
-
 			return result.ToString();
 		}
 
 		protected override string SolvePartTwo()
 		{
-			return null;
+			var horizontalPos = 0;
+			var aim = 0;
+			var depth = 0;
+
+			foreach (var line in System.IO.File.ReadLines("inputs/Day02.txt"))
+			{
+				var splitLine = line.Split(' ');
+				var command = splitLine[0];
+				var value = Convert.ToInt32(splitLine[1]);
+
+				switch (command)
+				{
+					case "forward":
+						horizontalPos += value;
+						depth += value * aim;
+						break;
+					case "up":
+						aim -= value;
+						break;
+					case "down":
+						aim += value;
+						break;
+				}
+			}
+
+			var result = horizontalPos * depth;
+
+			return result.ToString();
 		}
 	}
 }
