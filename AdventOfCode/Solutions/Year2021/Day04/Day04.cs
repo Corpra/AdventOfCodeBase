@@ -15,93 +15,95 @@ namespace AdventOfCode.Solutions.Year2021
 
 		protected override string SolvePartOne()
 		{
-			var inputLines = System.IO.File.ReadLines("inputs/Day04.txt").ToList();
-			var drawNumbers = inputLines[0].Split(',').ToList();
+			//var inputLines = System.IO.File.ReadLines("inputs/Day04.txt").ToList();
+			//var drawNumbers = inputLines[0].Split(',').ToList();
 
-			var boards = SetUpBoards(inputLines);
+			//var boards = SetUpBoards(inputLines);
 
-			foreach (var drawNumber in drawNumbers)
-			{
-				foreach (var board in boards)
-				{
-					for (var i = 0; i < 5; i++)
-					{
-						board.Rows[i] = board.Rows[i].Select(number => number.Value == drawNumber ? new Number(drawNumber, true) : number).ToList();
-					}
-				}
+			//foreach (var drawNumber in drawNumbers)
+			//{
+			//	foreach (var board in boards)
+			//	{
+			//		for (var i = 0; i < 5; i++)
+			//		{
+			//			board.Rows[i] = board.Rows[i].Select(number => number.Value == drawNumber ? new Number(drawNumber, true) : number).ToList();
+			//		}
+			//	}
 
-				var winningBoards = CheckForWinningBoards(boards);
-				if (winningBoards.Count > 0)
-					return CalculateBoard(winningBoards.First(), Convert.ToInt32(drawNumber)).ToString();
-			}
+			//	var winningBoards = CheckForWinningBoards(boards);
+			//	if (winningBoards.Count > 0)
+			//		return CalculateBoard(winningBoards.First(), Convert.ToInt32(drawNumber)).ToString();
+			//}
 
+			//return null;
 			return null;
 		}
 
 		protected override string SolvePartTwo()
 		{
-			var inputLines = System.IO.File.ReadLines("inputs/Day04.txt").ToList();
-			var drawNumbers = inputLines[0].Split(',').ToList();
+			//var inputLines = System.IO.File.ReadLines("inputs/Day04.txt").ToList();
+			//var drawNumbers = inputLines[0].Split(',').ToList();
 
-			var boards = SetUpBoards(inputLines);
+			//var boards = SetUpBoards(inputLines);
 
-			var index = 0;
-			var lastDrawnNumberIndexThatWon = 0;
+			//var index = 0;
+			//var lastDrawnNumberIndexThatWon = 0;
 
-			foreach (var drawNumber in drawNumbers)
-			{
-				foreach (var board in boards)
-				{
-					for (var i = 0; i < 5; i++)
-					{
-						board.Rows[i] = board.Rows[i].Select(number => number.Value == drawNumber ? new Number(drawNumber, true) : number).ToList();
-					}
-				}
+			//foreach (var drawNumber in drawNumbers)
+			//{
+			//	foreach (var board in boards)
+			//	{
+			//		for (var i = 0; i < 5; i++)
+			//		{
+			//			board.Rows[i] = board.Rows[i].Select(number => number.Value == drawNumber ? new Number(drawNumber, true) : number).ToList();
+			//		}
+			//	}
 
-				var winningBoards = CheckForWinningBoards(boards);
-				if (winningBoards.Count > 0)
-				{
-					lastDrawnNumberIndexThatWon = index;
+			//	var winningBoards = CheckForWinningBoards(boards);
+			//	if (winningBoards.Count > 0)
+			//	{
+			//		lastDrawnNumberIndexThatWon = index;
 
-					foreach (var winningBoard in winningBoards)
-					{
-						var indexOfWinningBoard = boards.IndexOf(winningBoard);
-						boards[indexOfWinningBoard].HasWon = true;
-					}
-				}
+			//		foreach (var winningBoard in winningBoards)
+			//		{
+			//			var indexOfWinningBoard = boards.IndexOf(winningBoard);
+			//			boards[indexOfWinningBoard].HasWon = true;
+			//		}
+			//	}
 
-				index++;
-			}
+			//	index++;
+			//}
 
-			index = 0;
-			boards = SetUpBoards(inputLines);
+			//index = 0;
+			//boards = SetUpBoards(inputLines);
 
-			foreach (var drawNumber in drawNumbers)
-			{
-				foreach (var board in boards)
-				{
-					for (var i = 0; i < 5; i++)
-					{
-						board.Rows[i] = board.Rows[i].Select(number => number.Value == drawNumber ? new Number(drawNumber, true) : number).ToList();
-					}
-				}
+			//foreach (var drawNumber in drawNumbers)
+			//{
+			//	foreach (var board in boards)
+			//	{
+			//		for (var i = 0; i < 5; i++)
+			//		{
+			//			board.Rows[i] = board.Rows[i].Select(number => number.Value == drawNumber ? new Number(drawNumber, true) : number).ToList();
+			//		}
+			//	}
 
-				var winningBoards = CheckForWinningBoards(boards);
-				if (winningBoards.Count > 0)
-				{
-					foreach (var winningBoard in winningBoards)
-					{
-						var indexOfWinningBoard = boards.IndexOf(winningBoard);
-						boards[indexOfWinningBoard].HasWon = true;
-					}
+			//	var winningBoards = CheckForWinningBoards(boards);
+			//	if (winningBoards.Count > 0)
+			//	{
+			//		foreach (var winningBoard in winningBoards)
+			//		{
+			//			var indexOfWinningBoard = boards.IndexOf(winningBoard);
+			//			boards[indexOfWinningBoard].HasWon = true;
+			//		}
 
-					if (index == lastDrawnNumberIndexThatWon)
-						return CalculateBoard(winningBoards.Last(), Convert.ToInt32(drawNumber)).ToString();
-				}
+			//		if (index == lastDrawnNumberIndexThatWon)
+			//			return CalculateBoard(winningBoards.Last(), Convert.ToInt32(drawNumber)).ToString();
+			//	}
 
-				index++;
-			}
+			//	index++;
+			//}
 
+			//return null;
 			return null;
 		}
 

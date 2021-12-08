@@ -15,132 +15,134 @@ namespace AdventOfCode.Solutions.Year2021
 
 		protected override string SolvePartOne()
 		{
-			var inputLines = System.IO.File.ReadLines("inputs/Day05.txt").ToList();
+			//var inputLines = System.IO.File.ReadLines("inputs/Day05.txt").ToList();
 
-			var board = CreateBoard();
+			//var board = CreateBoard();
 
-			var coordinates = inputLines.Select(i => new Coordinate(i));
+			//var coordinates = inputLines.Select(i => new Coordinate(i));
 
-			var straightCoordinates = coordinates.Where(c => c.X1 == c.X2 || c.Y1 == c.Y2);
+			//var straightCoordinates = coordinates.Where(c => c.X1 == c.X2 || c.Y1 == c.Y2);
 
-			foreach (var coordinate in straightCoordinates)
-			{
-				var x = coordinate.X1;
-				var y = coordinate.Y1;
+			//foreach (var coordinate in straightCoordinates)
+			//{
+			//	var x = coordinate.X1;
+			//	var y = coordinate.Y1;
 
-				if (coordinate.X1 < coordinate.X2)
-				{
-					for (var i = 0; i <= coordinate.X2 - coordinate.X1; i++)
-					{
-						board[x][y]++;
-						x++;
-					}
-				}
+			//	if (coordinate.X1 < coordinate.X2)
+			//	{
+			//		for (var i = 0; i <= coordinate.X2 - coordinate.X1; i++)
+			//		{
+			//			board[x][y]++;
+			//			x++;
+			//		}
+			//	}
 
-				if (coordinate.X1 > coordinate.X2)
-				{
-					for (var i = 0; i <= coordinate.X1 - coordinate.X2; i++)
-					{
-						board[x][y]++;
-						x--;
-					}
-				}
+			//	if (coordinate.X1 > coordinate.X2)
+			//	{
+			//		for (var i = 0; i <= coordinate.X1 - coordinate.X2; i++)
+			//		{
+			//			board[x][y]++;
+			//			x--;
+			//		}
+			//	}
 
-				if (coordinate.Y1 < coordinate.Y2)
-				{
-					for (var i = 0; i <= coordinate.Y2 - coordinate.Y1; i++)
-					{
-						board[x][y]++;
-						y++;
-					}
-				}
+			//	if (coordinate.Y1 < coordinate.Y2)
+			//	{
+			//		for (var i = 0; i <= coordinate.Y2 - coordinate.Y1; i++)
+			//		{
+			//			board[x][y]++;
+			//			y++;
+			//		}
+			//	}
 
-				if (coordinate.Y1 > coordinate.Y2)
-				{
-					for (var i = 0; i <= coordinate.Y1 - coordinate.Y2; i++)
-					{
-						board[x][y]++;
-						y--;
-					}
-				}
-			}
+			//	if (coordinate.Y1 > coordinate.Y2)
+			//	{
+			//		for (var i = 0; i <= coordinate.Y1 - coordinate.Y2; i++)
+			//		{
+			//			board[x][y]++;
+			//			y--;
+			//		}
+			//	}
+			//}
 
-			var result = board.Sum(column => column.Count(point => point >= 2));
+			//var result = board.Sum(column => column.Count(point => point >= 2));
 
-			return result.ToString();
+			//return result.ToString();
+			return null;
 		}
 
 		protected override string SolvePartTwo()
 		{
-			var inputLines = System.IO.File.ReadLines("inputs/Day05.txt").ToList();
+			//var inputLines = System.IO.File.ReadLines("inputs/Day05.txt").ToList();
 
-			var board = CreateBoard();
+			//var board = CreateBoard();
 
-			var coordinates = inputLines.Select(i => new Coordinate(i));
+			//var coordinates = inputLines.Select(i => new Coordinate(i));
 
-			var straightAndDiagonalCoordinates = coordinates.Where(c => c.X1 == c.X2 || c.Y1 == c.Y2 || (c.X1 - c.X2 > 0 ? c.X1 - c.X2 : c.X2 - c.X1) == (c.Y1 - c.Y2 > 0 ? c.Y1 - c.Y2 : c.Y2 - c.Y1));
+			//var straightAndDiagonalCoordinates = coordinates.Where(c => c.X1 == c.X2 || c.Y1 == c.Y2 || (c.X1 - c.X2 > 0 ? c.X1 - c.X2 : c.X2 - c.X1) == (c.Y1 - c.Y2 > 0 ? c.Y1 - c.Y2 : c.Y2 - c.Y1));
 
-			foreach (var coordinate in straightAndDiagonalCoordinates)
-			{
-				var x = coordinate.X1;
-				var y = coordinate.Y1;
+			//foreach (var coordinate in straightAndDiagonalCoordinates)
+			//{
+			//	var x = coordinate.X1;
+			//	var y = coordinate.Y1;
 
-				if (coordinate.X1 < coordinate.X2 && coordinate.Y1 == coordinate.Y2)
-				{
-					for (var i = 0; i <= coordinate.X2 - coordinate.X1; i++)
-					{
-						board[x][y]++;
-						x++;
-					}
-				}
+			//	if (coordinate.X1 < coordinate.X2 && coordinate.Y1 == coordinate.Y2)
+			//	{
+			//		for (var i = 0; i <= coordinate.X2 - coordinate.X1; i++)
+			//		{
+			//			board[x][y]++;
+			//			x++;
+			//		}
+			//	}
 
-				if (coordinate.X1 > coordinate.X2 && coordinate.Y1 == coordinate.Y2)
-				{
-					for (var i = 0; i <= coordinate.X1 - coordinate.X2; i++)
-					{
-						board[x][y]++;
-						x--;
-					}
-				}
+			//	if (coordinate.X1 > coordinate.X2 && coordinate.Y1 == coordinate.Y2)
+			//	{
+			//		for (var i = 0; i <= coordinate.X1 - coordinate.X2; i++)
+			//		{
+			//			board[x][y]++;
+			//			x--;
+			//		}
+			//	}
 
-				if (coordinate.Y1 < coordinate.Y2 && coordinate.X1 == coordinate.X2)
-				{
-					for (var i = 0; i <= coordinate.Y2 - coordinate.Y1; i++)
-					{
-						board[x][y]++;
-						y++;
-					}
-				}
+			//	if (coordinate.Y1 < coordinate.Y2 && coordinate.X1 == coordinate.X2)
+			//	{
+			//		for (var i = 0; i <= coordinate.Y2 - coordinate.Y1; i++)
+			//		{
+			//			board[x][y]++;
+			//			y++;
+			//		}
+			//	}
 
-				if (coordinate.Y1 > coordinate.Y2 && coordinate.X1 == coordinate.X2)
-				{
-					for (var i = 0; i <= coordinate.Y1 - coordinate.Y2; i++)
-					{
-						board[x][y]++;
-						y--;
-					}
-				}
+			//	if (coordinate.Y1 > coordinate.Y2 && coordinate.X1 == coordinate.X2)
+			//	{
+			//		for (var i = 0; i <= coordinate.Y1 - coordinate.Y2; i++)
+			//		{
+			//			board[x][y]++;
+			//			y--;
+			//		}
+			//	}
 
-				if (coordinate.X1 != coordinate.X2 && coordinate.Y1 != coordinate.Y2)
-				{
-					var xDirection = coordinate.X1 < coordinate.X2 ? 1 : 0;
-					var yDirection = coordinate.Y1 < coordinate.Y2 ? 1 : 0;
+			//	if (coordinate.X1 != coordinate.X2 && coordinate.Y1 != coordinate.Y2)
+			//	{
+			//		var xDirection = coordinate.X1 < coordinate.X2 ? 1 : 0;
+			//		var yDirection = coordinate.Y1 < coordinate.Y2 ? 1 : 0;
 
-					board[x][y]++;
+			//		board[x][y]++;
 
-					while (x != coordinate.X2)
-					{
-						x = xDirection == 1 ? x + 1 : x - 1;
-						y = yDirection == 1 ? y + 1 : y - 1;
+			//		while (x != coordinate.X2)
+			//		{
+			//			x = xDirection == 1 ? x + 1 : x - 1;
+			//			y = yDirection == 1 ? y + 1 : y - 1;
 
-						board[x][y]++;
-					}
-				}
-			}
+			//			board[x][y]++;
+			//		}
+			//	}
+			//}
 
-			var result = board.Sum(column => column.Count(point => point >= 2));
+			//var result = board.Sum(column => column.Count(point => point >= 2));
 
-			return result.ToString();
+			//return result.ToString();
+			return null;
 		}
 
 		private void PrintCommands(IEnumerable<Coordinate> coordinates)
