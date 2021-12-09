@@ -1,26 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
 
-namespace AdventOfCode.Solutions.Year2021
-{
+//namespace AdventOfCode.Solutions.Year2021
+//{
 
-	class Day11 : ASolution
-	{
+//	class Day11 : ASolution
+//	{
 
-		public Day11() : base(11, 2021, "")
-		{
+//		public Day11() : base(11, 2021, "")
+//		{
 
-		}
+//		}
 
-		protected override string SolvePartOne()
-		{
-			return null;
-		}
+//		protected override string SolvePartOne()
+//		{
+//			return null;
+//		}
 
-		protected override string SolvePartTwo()
-		{
-			return null;
-		}
-	}
-}
+//		protected override string SolvePartTwo()
+//		{
+//			return null;
+//		}
+//	}
+//}
